@@ -33,11 +33,12 @@ spec:
             secretKeyRef:
               name: mongodb-secret
               key: mongo-root-password
-      volumes:        
+      volumes:
       - name: logvolume
-        persistentVolumeClaim:    
-          claimName: pv-claim 
+        persistentVolumeClaim:
+          claimName: pv-claim
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -48,5 +49,4 @@ spec:
   ports:
     - protocol: TCP
       port: 27017
-      targetPort: 27017              
- 
+      targetPort: 27017
